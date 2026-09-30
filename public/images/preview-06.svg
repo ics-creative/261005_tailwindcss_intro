@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title">
+  <title id="title">色彩の余韻</title>
+  <defs>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ee6958"/>
+      <stop offset="1" stop-color="#9f182c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#red)"/>
+  <circle cx="236" cy="352" r="194" fill="#244e9a" fill-opacity=".92"/>
+  <circle cx="532" cy="427" r="232" fill="#f3c73f" fill-opacity=".88"/>
+  <circle cx="390" cy="665" r="186" fill="#f1e5d0" fill-opacity=".82"/>
+  <path d="M0 88h800M0 912h800" stroke="#fff5df" stroke-opacity=".45"/>
+  <path d="M72 76v848M728 76v848" stroke="#fff5df" stroke-opacity=".45"/>
+  <rect x="72" y="76" width="656" height="848" fill="none" stroke="#fff5df" stroke-opacity=".25"/>
+  <text x="92" y="132" fill="#fff4df" font-family="Arial, sans-serif" font-size="18" letter-spacing="6">STUDY 06</text>
+</svg>

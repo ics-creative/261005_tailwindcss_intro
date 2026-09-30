@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title">
+  <title id="title">揺れる境界</title>
+  <rect width="800" height="1000" fill="#e8e5df"/>
+  <path d="M0 0h470L202 1000H0Z" fill="#161616"/>
+  <path d="M800 0v1000H386L650 0Z" fill="#b9b6b0"/>
+  <path d="m415 0-74 1000" stroke="#fff" stroke-width="7"/>
+  <path d="M0 270h800M0 510h800M0 750h800" stroke="#141414" stroke-opacity=".3"/>
+  <circle cx="401" cy="505" r="150" fill="#efede8" stroke="#191919" stroke-width="3"/>
+  <path d="M401 355v300M251 505h300" stroke="#191919" stroke-width="2"/>
+  <rect x="74" y="88" width="105" height="30" fill="#efede8"/>
+  <text x="84" y="110" fill="#181818" font-family="Arial, sans-serif" font-size="14" letter-spacing="3">BOUNDARY</text>
+  <text x="74" y="940" fill="#191919" font-family="Arial, sans-serif" font-size="18" letter-spacing="6">STUDY 05</text>
+</svg>

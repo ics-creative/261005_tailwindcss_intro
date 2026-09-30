@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title">
+  <title id="title">余白の輪郭</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d7e9ee"/>
+      <stop offset="0.52" stop-color="#6d91a1"/>
+      <stop offset="1" stop-color="#163444"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fff" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".08"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="515" cy="300" r="215" fill="none" stroke="#eff8f8" stroke-opacity=".68" stroke-width="2"/>
+  <circle cx="515" cy="300" r="155" fill="#c9e1e5" fill-opacity=".24"/>
+  <path d="M0 724C144 650 252 662 378 720s268 58 422-30v310H0Z" fill="#102c3b" fill-opacity=".7"/>
+  <rect x="76" y="105" width="215" height="610" rx="108" fill="url(#glass)" opacity=".72"/>
+  <path d="M74 814h652M74 842h492M74 870h566" stroke="#fff" stroke-opacity=".34"/>
+  <text x="74" y="940" fill="#f5fbfb" font-family="Arial, sans-serif" font-size="18" letter-spacing="6">STUDY 01</text>
+</svg>
