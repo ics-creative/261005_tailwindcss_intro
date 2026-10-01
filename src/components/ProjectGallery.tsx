@@ -1,45 +1,45 @@
-import { useLayoutEffect, useRef, useState } from 'react'
-import type { Project } from '../data/projects'
-import { ProjectPreview } from './ProjectPreview'
+import { useLayoutEffect, useRef, useState } from 'react';
+import type { Project } from '../data/projects';
+import { ProjectPreview } from './ProjectPreview';
 
 type ProjectGalleryProps = {
-  projects: Project[]
-}
+  projects: Project[];
+};
 
 export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const previewTrackRef = useRef<HTMLDivElement>(null)
-  const movingPreviewRef = useRef<HTMLDivElement>(null)
-  const titleRefs = useRef<Array<HTMLButtonElement | null>>([])
+  const [activeIndex, setActiveIndex] = useState(0);
+  const previewTrackRef = useRef<HTMLDivElement>(null);
+  const movingPreviewRef = useRef<HTMLDivElement>(null);
+  const titleRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useLayoutEffect(() => {
-    const track = previewTrackRef.current
-    const preview = movingPreviewRef.current
-    const title = titleRefs.current[activeIndex]
+    const track = previewTrackRef.current;
+    const preview = movingPreviewRef.current;
+    const title = titleRefs.current[activeIndex];
 
     if (!track || !preview || !title) {
-      return
+      return;
     }
 
     const alignPreviewWithTitle = () => {
-      const trackRect = track.getBoundingClientRect()
-      const titleRect = title.getBoundingClientRect()
-      const maxY = Math.max(0, trackRect.height - preview.offsetHeight)
-      const titleCenter = titleRect.top + titleRect.height / 2 - trackRect.top
-      const targetY = Math.min(Math.max(titleCenter - preview.offsetHeight / 2, 0), maxY)
-      preview.style.transform = `translate3d(0, ${targetY}px, 0)`
-    }
+      const trackRect = track.getBoundingClientRect();
+      const titleRect = title.getBoundingClientRect();
+      const maxY = Math.max(0, trackRect.height - preview.offsetHeight);
+      const titleCenter = titleRect.top + titleRect.height / 2 - trackRect.top;
+      const targetY = Math.min(Math.max(titleCenter - preview.offsetHeight / 2, 0), maxY);
+      preview.style.transform = `translate3d(0, ${targetY}px, 0)`;
+    };
 
-    const resizeObserver = new ResizeObserver(alignPreviewWithTitle)
-    resizeObserver.observe(track)
-    resizeObserver.observe(preview)
-    resizeObserver.observe(title)
-    alignPreviewWithTitle()
+    const resizeObserver = new ResizeObserver(alignPreviewWithTitle);
+    resizeObserver.observe(track);
+    resizeObserver.observe(preview);
+    resizeObserver.observe(title);
+    alignPreviewWithTitle();
 
     return () => {
-      resizeObserver.disconnect()
-    }
-  }, [activeIndex])
+      resizeObserver.disconnect();
+    };
+  }, [activeIndex]);
 
   return (
     <section className="mx-auto max-w-7xl px-5 lg:px-12">
@@ -50,13 +50,13 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
       <div className="grid lg:grid-cols-2 lg:gap-12">
         <ol className="flex flex-col justify-center py-10 lg:h-screen lg:py-0">
           {projects.map((project, index) => {
-            const isActive = index === activeIndex
+            const isActive = index === activeIndex;
 
             return (
               <li key={project.title} className="border-t border-neutral-950/15 last:border-b">
                 <button
                   ref={(element) => {
-                    titleRefs.current[index] = element
+                    titleRefs.current[index] = element;
                   }}
                   type="button"
                   aria-pressed={isActive}
@@ -73,7 +73,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
                   <span className="font-medium whitespace-nowrap">{project.title}</span>
                 </button>
               </li>
-            )
+            );
           })}
         </ol>
 
@@ -87,5 +87,5 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

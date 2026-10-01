@@ -1,10 +1,10 @@
-import type { Project } from '../data/projects'
+import type { Project } from '../data/projects';
 
 type ProjectPreviewProps = {
-  activeIndex: number
-  projects: Project[]
-  variant?: 'desktop' | 'mobile'
-}
+  activeIndex: number;
+  projects: Project[];
+  variant?: 'desktop' | 'mobile';
+};
 
 export const ProjectPreview = ({
   activeIndex,
@@ -19,7 +19,7 @@ export const ProjectPreview = ({
     }
   >
     {projects.map((project, index) => {
-      const isActive = index === activeIndex
+      const isActive = index === activeIndex;
 
       return (
         <img
@@ -31,7 +31,7 @@ export const ProjectPreview = ({
             isActive ? 'scale-100 opacity-100' : 'scale-105 opacity-0'
           }`}
         />
-      )
+      );
     })}
   </div>
-)
+);

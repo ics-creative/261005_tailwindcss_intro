@@ -33,3 +33,5 @@ npm run preview  # ビルド結果をローカルで確認
 
 Tailwind CSS は `@tailwindcss/vite` プラグイン経由で Vite に接続し、
 `src/index.css` から `@import 'tailwindcss';` で読み込んでいます。
+
+Oxfmtは`.oxfmtrc.json`で文末セミコロンとTailwind CSSクラスの並び順を統一しています。
