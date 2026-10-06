@@ -4,37 +4,57 @@ export type Project = {
   alt: string;
 };
 
-const imagePath = (name: string) => `${import.meta.env.BASE_URL}images/${name}`;
+const imagePath = (id: number) => `https://picsum.photos/id/${id}/800/1000`;
 
 export const projects: Project[] = [
   {
-    title: 'Negative Space',
-    image: imagePath('preview-01.svg'),
-    alt: '青いグラデーションと半透明の円を組み合わせた抽象作品',
+    title: 'Quiet Companion',
+    image: imagePath(237),
+    alt: 'Lorem Picsumの写真（画像ID 237）',
   },
   {
-    title: 'Quiet Geometry',
-    image: imagePath('preview-02.svg'),
-    alt: 'オレンジ色の背景に黒いアーチを配置した抽象作品',
+    title: 'Open Horizon',
+    image: imagePath(238),
+    alt: 'Lorem Picsumの写真（画像ID 238）',
   },
   {
-    title: 'Light Fragments',
-    image: imagePath('preview-03.svg'),
-    alt: '緑の背景に光の筋と格子を重ねた抽象作品',
+    title: 'Soft Current',
+    image: imagePath(239),
+    alt: 'Lorem Picsumの写真（画像ID 239）',
   },
   {
-    title: 'Form Memory',
-    image: imagePath('preview-04.svg'),
-    alt: '紫色の空間に立体的な球体を浮かべた抽象作品',
+    title: 'Passing Light',
+    image: imagePath(240),
+    alt: 'Lorem Picsumの写真（画像ID 240）',
   },
   {
-    title: 'Soft Boundary',
-    image: imagePath('preview-05.svg'),
-    alt: 'モノクロームの面と線を大胆に配置した抽象作品',
+    title: 'Still Surface',
+    image: imagePath(241),
+    alt: 'Lorem Picsumの写真（画像ID 241）',
   },
   {
-    title: 'Color Resonance',
-    image: imagePath('preview-06.svg'),
-    alt: '赤い背景に青と黄色の円を重ねた抽象作品',
+    title: 'Wild Texture',
+    image: imagePath(242),
+    alt: 'Lorem Picsumの写真（画像ID 242）',
+  },
+  {
+    title: 'Morning Shade',
+    image: imagePath(243),
+    alt: 'Lorem Picsumの写真（画像ID 243）',
+  },
+  {
+    title: 'Faraway Motion',
+    image: imagePath(244),
+    alt: 'Lorem Picsumの写真（画像ID 244）',
+  },
+  {
+    title: 'Measured Silence',
+    image: imagePath(249),
+    alt: 'Lorem Picsumの写真（画像ID 249）',
+  },
+  {
+    title: 'Distant Signal',
+    image: imagePath(250),
+    alt: 'Lorem Picsumの写真（画像ID 250）',
   },
 ];

@@ -10,29 +10,44 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const previewTrackRef = useRef<HTMLDivElement>(null);
   const movingPreviewRef = useRef<HTMLDivElement>(null);
+  const titleListRef = useRef<HTMLOListElement>(null);
   const titleRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useLayoutEffect(() => {
     const track = previewTrackRef.current;
     const preview = movingPreviewRef.current;
+    const titleList = titleListRef.current;
+    const firstTitle = titleList?.firstElementChild;
+    const lastTitle = titleList?.lastElementChild;
     const title = titleRefs.current[activeIndex];
 
-    if (!track || !preview || !title) {
+    if (!track || !preview || !titleList || !firstTitle || !lastTitle || !title) {
       return;
     }
 
     const alignPreviewWithTitle = () => {
       const trackRect = track.getBoundingClientRect();
+      const firstTitleRect = firstTitle.getBoundingClientRect();
+      const lastTitleRect = lastTitle.getBoundingClientRect();
       const titleRect = title.getBoundingClientRect();
-      const maxY = Math.max(0, trackRect.height - preview.offsetHeight);
+      const titleStyles = getComputedStyle(title);
+      const boundaryInset = Number.parseFloat(titleStyles.paddingTop);
+      const minY = firstTitleRect.top - trackRect.top + boundaryInset;
+      const maxY = Math.max(
+        minY,
+        lastTitleRect.bottom - trackRect.top - preview.offsetHeight - boundaryInset,
+      );
       const titleCenter = titleRect.top + titleRect.height / 2 - trackRect.top;
-      const targetY = Math.min(Math.max(titleCenter - preview.offsetHeight / 2, 0), maxY);
+      const targetY = Math.min(Math.max(titleCenter - preview.offsetHeight / 2, minY), maxY);
       preview.style.transform = `translate3d(0, ${targetY}px, 0)`;
     };
 
     const resizeObserver = new ResizeObserver(alignPreviewWithTitle);
     resizeObserver.observe(track);
     resizeObserver.observe(preview);
+    resizeObserver.observe(titleList);
+    resizeObserver.observe(firstTitle);
+    resizeObserver.observe(lastTitle);
     resizeObserver.observe(title);
     alignPreviewWithTitle();
 
@@ -42,18 +57,33 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
   }, [activeIndex]);
 
   return (
-    <section className="mx-auto max-w-7xl px-5 lg:px-12">
-      <div className="pt-5 lg:hidden">
+    <section className="mx-auto max-w-7xl px-5 sm:px-12">
+      <div className="pt-5 sm:hidden">
         <ProjectPreview activeIndex={activeIndex} projects={projects} variant="mobile" />
       </div>
 
-      <div className="grid lg:grid-cols-2 lg:gap-12">
-        <ol className="flex flex-col justify-center py-10 lg:h-screen lg:py-0">
+      <div className="grid sm:grid-cols-2 sm:gap-12">
+        <ol ref={titleListRef} className="flex flex-col justify-center py-10 sm:h-screen sm:py-0">
           {projects.map((project, index) => {
             const isActive = index === activeIndex;
 
             return (
-              <li key={project.title} className="border-t border-neutral-950/15 last:border-b">
+              <li
+                key={project.title}
+                className="relative w-full border-t border-neutral-950/15 last:border-b"
+              >
+                {index === 0 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute top-[-1px] left-0 hidden h-0 w-[calc(200%+3rem)] border-t border-neutral-950/15 sm:block"
+                  />
+                )}
+                {index === projects.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-[-1px] left-0 hidden h-0 w-[calc(200%+3rem)] border-b border-neutral-950/15 sm:block"
+                  />
+                )}
                 <button
                   ref={(element) => {
                     titleRefs.current[index] = element;
@@ -63,7 +93,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
                   onPointerEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                   onClick={() => setActiveIndex(index)}
-                  className={`grid w-full cursor-pointer grid-cols-[2.15em_minmax(0,1fr)] items-center gap-3 py-4 text-left text-3xl leading-none tracking-tight transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-950 motion-reduce:transition-none lg:gap-5 lg:py-3 lg:text-5xl ${
+                  className={`grid w-full cursor-pointer grid-cols-[2.15em_minmax(0,1fr)] items-center gap-3 py-4 text-left text-3xl leading-none tracking-tight transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-950 motion-reduce:transition-none sm:gap-5 sm:py-3 sm:text-5xl ${
                     isActive ? 'text-neutral-950' : 'text-neutral-400 hover:text-neutral-950'
                   }`}
                 >
@@ -77,7 +107,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
           })}
         </ol>
 
-        <div ref={previewTrackRef} className="relative hidden h-screen lg:block">
+        <div ref={previewTrackRef} className="relative hidden h-screen sm:block">
           <div
             ref={movingPreviewRef}
             className="absolute top-0 right-0 transition-transform duration-700 ease-out motion-reduce:transition-none"
