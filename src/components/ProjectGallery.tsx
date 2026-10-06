@@ -57,7 +57,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
   }, [activeIndex]);
 
   return (
-    <section className="mx-auto max-w-7xl px-5 sm:px-12">
+    <section className="w-full max-w-7xl px-5 sm:px-12">
       <div className="pt-5 sm:hidden">
         <ProjectPreview activeIndex={activeIndex} projects={projects} variant="mobile" />
       </div>
@@ -75,13 +75,13 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
                 {index === 0 && (
                   <span
                     aria-hidden="true"
-                    className="absolute top-[-1px] left-0 hidden h-0 w-[calc(200%+3rem)] border-t border-neutral-950/15 sm:block"
+                    className="absolute -top-px left-0 hidden h-0 w-[calc(200%+3rem)] border-t border-neutral-950/15 sm:block"
                   />
                 )}
                 {index === projects.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-[-1px] left-0 hidden h-0 w-[calc(200%+3rem)] border-b border-neutral-950/15 sm:block"
+                    className="absolute -bottom-px left-0 hidden h-0 w-[calc(200%+3rem)] border-b border-neutral-950/15 sm:block"
                   />
                 )}
                 <button
@@ -93,14 +93,14 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
                   onPointerEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                   onClick={() => setActiveIndex(index)}
-                  className={`grid w-full cursor-pointer grid-cols-[2.15em_minmax(0,1fr)] items-center gap-3 py-4 text-left text-3xl leading-none tracking-tight transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-950 motion-reduce:transition-none sm:gap-5 sm:py-3 sm:text-5xl ${
+                  className={`grid w-full min-w-0 cursor-pointer grid-cols-[2.15em_minmax(0,1fr)] items-center gap-3 py-4 text-[clamp(1.25rem,4vw,3rem)] leading-none tracking-tight transition-colors duration-300 motion-reduce:transition-none sm:gap-5 sm:py-3 ${
                     isActive ? 'text-neutral-950' : 'text-neutral-400 hover:text-neutral-950'
                   }`}
                 >
                   <span className="font-light tabular-nums">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <span className="font-medium whitespace-nowrap">{project.title}</span>
+                  <span className="min-w-0 font-medium whitespace-nowrap">{project.title}</span>
                 </button>
               </li>
             );
@@ -110,7 +110,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
         <div ref={previewTrackRef} className="relative hidden h-screen sm:block">
           <div
             ref={movingPreviewRef}
-            className="absolute top-0 right-0 transition-transform duration-700 ease-out motion-reduce:transition-none"
+            className="absolute top-0 right-0 max-w-full transition-transform duration-700 ease-out motion-reduce:transition-none"
           >
             <ProjectPreview activeIndex={activeIndex} projects={projects} />
           </div>

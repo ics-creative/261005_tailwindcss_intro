@@ -15,7 +15,7 @@ export const ProjectPreview = ({
     className={
       variant === 'mobile'
         ? 'relative aspect-[16/11] w-full overflow-hidden'
-        : 'relative aspect-[4/5] w-[clamp(16rem,25vw,23rem)] overflow-hidden'
+        : 'relative aspect-[4/5] w-[clamp(12rem,25vw,23rem)] max-w-full overflow-hidden'
     }
   >
     {projects.map((project, index) => {
@@ -25,8 +25,8 @@ export const ProjectPreview = ({
         <img
           key={project.image}
           src={project.image}
-          alt={isActive ? project.alt : ''}
-          aria-hidden={!isActive}
+          alt=""
+          aria-hidden="true"
           className={`absolute inset-0 size-full object-cover transition duration-500 ease-out motion-reduce:transition-none ${
             isActive ? 'scale-100 opacity-100' : 'scale-105 opacity-0'
           }`}
