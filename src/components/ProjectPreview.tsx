@@ -14,8 +14,8 @@ export const ProjectPreview = ({
   <div
     className={
       variant === 'mobile'
-        ? 'relative aspect-[16/11] w-full overflow-hidden'
-        : 'relative aspect-[4/5] w-[clamp(12rem,25vw,23rem)] max-w-full overflow-hidden'
+        ? 'relative aspect-16/11 w-full overflow-hidden'
+        : 'relative aspect-4/5 w-[clamp(12rem,25vw,23rem)] max-w-full overflow-hidden'
     }
   >
     {projects.map((project, index) => {
