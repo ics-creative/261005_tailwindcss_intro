@@ -63,7 +63,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
       </div>
 
       <div className="grid sm:grid-cols-2 sm:gap-12">
-        <ol ref={titleListRef} className="flex flex-col justify-center py-10 sm:h-screen sm:py-0">
+        <ol ref={titleListRef} className="flex flex-col justify-center py-10 sm:min-h-dvh sm:py-0">
           {projects.map((project, index) => {
             const isActive = index === activeIndex;
 
@@ -107,7 +107,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
           })}
         </ol>
 
-        <div ref={previewTrackRef} className="relative hidden h-screen sm:block">
+        <div ref={previewTrackRef} className="relative hidden min-h-dvh sm:block">
           <div
             ref={movingPreviewRef}
             className="absolute top-0 right-0 max-w-full transition-transform duration-700 ease-out motion-reduce:transition-none"
