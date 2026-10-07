@@ -62,26 +62,26 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
         <ProjectPreview activeIndex={activeIndex} projects={projects} variant="mobile" />
       </div>
 
-      <div className="grid sm:grid-cols-2 sm:gap-12">
-        <ol ref={titleListRef} className="flex flex-col justify-center py-10 sm:min-h-dvh sm:py-0">
+      <div className="grid sm:grid-cols-[3fr_2fr] sm:gap-12">
+        <ol ref={titleListRef} className="flex flex-col justify-center py-10">
           {projects.map((project, index) => {
             const isActive = index === activeIndex;
 
             return (
               <li
                 key={project.title}
-                className="relative w-full border-t border-neutral-950/15 last:border-b"
+                className="relative w-full border-t border-neutral-950/15 first:border-t-0 last:border-b-0"
               >
                 {index === 0 && (
                   <span
                     aria-hidden="true"
-                    className="absolute -top-px left-0 hidden h-0 w-[calc(200%+3rem)] border-t border-neutral-950/15 sm:block"
+                    className="absolute -top-4 left-0 hidden h-0 w-[calc(166.667%+3rem)] border-t border-neutral-950/15 sm:block"
                   />
                 )}
                 {index === projects.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className="absolute -bottom-px left-0 hidden h-0 w-[calc(200%+3rem)] border-b border-neutral-950/15 sm:block"
+                    className="absolute -bottom-4 left-0 hidden h-0 w-[calc(166.667%+3rem)] border-b border-neutral-950/15 sm:block"
                   />
                 )}
                 <button
@@ -107,7 +107,10 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
           })}
         </ol>
 
-        <div ref={previewTrackRef} className="relative hidden min-h-dvh sm:block">
+        <div
+          ref={previewTrackRef}
+          className="relative my-10 hidden border-l border-neutral-950/15 sm:block"
+        >
           <div
             ref={movingPreviewRef}
             className="absolute top-0 right-0 max-w-full transition-transform duration-700 ease-out motion-reduce:transition-none"
