@@ -70,7 +70,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
             return (
               <li
                 key={project.title}
-                className="relative w-full border-t border-neutral-950/15 first:border-t-0 last:border-b-0"
+                className="relative border-t border-neutral-950/15 first:border-t-0"
               >
                 {index === 0 && (
                   <span
