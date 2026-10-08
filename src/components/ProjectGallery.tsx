@@ -90,7 +90,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
                   }}
                   type="button"
                   aria-pressed={isActive}
-                  onPointerEnter={() => setActiveIndex(index)}
+                  onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                   onClick={() => setActiveIndex(index)}
                   className={`grid w-full min-w-0 cursor-pointer grid-cols-[2.15em_minmax(0,1fr)] items-center gap-3 py-4 text-[clamp(1.25rem,4vw,3rem)] leading-none tracking-tight transition-colors duration-300 motion-reduce:transition-none sm:gap-5 sm:py-3 ${
