@@ -58,11 +58,11 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
 
   return (
     <section className="w-full max-w-7xl px-5 sm:px-12">
-      <div className="pt-5 sm:hidden">
+      <div className="fixed inset-0 z-0 flex items-center justify-center px-5 sm:hidden">
         <ProjectPreview activeIndex={activeIndex} projects={projects} variant="mobile" />
       </div>
 
-      <div className="grid sm:grid-cols-[3fr_2fr] sm:gap-12">
+      <div className="relative z-10 grid sm:grid-cols-[3fr_2fr] sm:gap-12">
         <ol ref={titleListRef} className="flex flex-col justify-center py-10">
           {projects.map((project, index) => {
             const isActive = index === activeIndex;
