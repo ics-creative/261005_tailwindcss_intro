@@ -19,8 +19,8 @@ export const projects: Project[] = [
     image: imagePath(239),
   },
   {
-    title: 'Passing Light',
-    image: imagePath(240),
+    title: 'Coastal Light',
+    image: imagePath(13),
   },
   {
     title: 'Still Surface',
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     image: imagePath(249),
   },
   {
-    title: 'Distant Signal',
-    image: imagePath(250),
+    title: 'Crimson Cliffs',
+    image: imagePath(1016),
   },
 ];
