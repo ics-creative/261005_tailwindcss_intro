@@ -70,18 +70,18 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
             return (
               <li
                 key={project.title}
-                className="relative border-t border-neutral-950/15 first:border-t-0"
+                className="relative border-t border-border-subtle first:border-t-0"
               >
                 {index === 0 && (
                   <span
                     aria-hidden="true"
-                    className="absolute -top-4 left-0 hidden h-0 w-[calc(166.667%+3rem)] border-t border-neutral-950/15 sm:block"
+                    className="absolute -top-4 left-0 hidden h-0 w-[calc(166.667%+3rem)] border-t border-border-subtle sm:block"
                   />
                 )}
                 {index === projects.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className="absolute -bottom-4 left-0 hidden h-0 w-[calc(166.667%+3rem)] border-b border-neutral-950/15 sm:block"
+                    className="absolute -bottom-4 left-0 hidden h-0 w-[calc(166.667%+3rem)] border-b border-border-subtle sm:block"
                   />
                 )}
                 <button
@@ -93,8 +93,8 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                   onClick={() => setActiveIndex(index)}
-                  className={`grid w-full min-w-0 cursor-pointer grid-cols-[2.15em_minmax(0,1fr)] items-center gap-3 py-4 text-[clamp(1.25rem,4vw,3rem)] leading-none tracking-tight transition-colors duration-300 motion-reduce:transition-none sm:gap-5 sm:py-3 ${
-                    isActive ? 'text-neutral-950' : 'text-neutral-400 hover:text-neutral-950'
+                  className={`grid w-full min-w-0 cursor-pointer grid-cols-[2.15em_minmax(0,1fr)] items-center gap-3 py-4 text-gallery-title leading-none tracking-tight transition-colors duration-300 motion-reduce:transition-none sm:gap-5 sm:py-3 ${
+                    isActive ? 'text-foreground' : 'text-muted hover:text-foreground'
                   }`}
                 >
                   <span className="font-light tabular-nums">
@@ -109,7 +109,7 @@ export const ProjectGallery = ({ projects }: ProjectGalleryProps) => {
 
         <div
           ref={previewTrackRef}
-          className="relative my-10 hidden border-l border-neutral-950/15 sm:block"
+          className="relative my-10 hidden border-l border-border-subtle sm:block"
         >
           <div
             ref={movingPreviewRef}
