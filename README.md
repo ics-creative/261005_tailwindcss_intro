@@ -7,7 +7,7 @@ React、Vite、Tailwind CSS、TypeScript で作成した入門記事用のデモ
 - React 19
 - Vite 8
 - Tailwind CSS 4
-- TypeScript 6
+- TypeScript 7
 
 ## 起動方法
 
