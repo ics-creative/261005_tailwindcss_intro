@@ -63,6 +63,14 @@ export const Gallery = ({ items }: GalleryProps) => {
       </div>
 
       <div className="relative z-10 grid sm:grid-cols-[3fr_2fr] sm:gap-12">
+        <span
+          aria-hidden="true"
+          className="absolute top-6 left-0 hidden h-0 w-full border-t border-border-subtle sm:block"
+        />
+        <span
+          aria-hidden="true"
+          className="absolute bottom-6 left-0 hidden h-0 w-full border-b border-border-subtle sm:block"
+        />
         <ol ref={titleListRef} className="flex flex-col justify-center py-10">
           {items.map((item, index) => {
             const isActive = index === activeIndex;
@@ -70,20 +78,8 @@ export const Gallery = ({ items }: GalleryProps) => {
             return (
               <li
                 key={item.title}
-                className="relative border-t border-border-subtle first:border-t-0"
+                className="border-t border-border-subtle last:border-b sm:first:border-t-0 sm:last:border-b-0"
               >
-                {index === 0 && (
-                  <span
-                    aria-hidden="true"
-                    className="absolute -top-4 left-0 hidden h-0 w-[calc(166.667%+3rem)] border-t border-border-subtle sm:block"
-                  />
-                )}
-                {index === items.length - 1 && (
-                  <span
-                    aria-hidden="true"
-                    className="absolute -bottom-4 left-0 hidden h-0 w-[calc(166.667%+3rem)] border-b border-border-subtle sm:block"
-                  />
-                )}
                 <button
                   ref={(element) => {
                     titleRefs.current[index] = element;
@@ -93,14 +89,14 @@ export const Gallery = ({ items }: GalleryProps) => {
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                   onClick={() => setActiveIndex(index)}
-                  className={`grid w-full min-w-0 cursor-pointer grid-cols-[2.15em_minmax(0,1fr)] items-center gap-3 py-4 text-gallery-title transition-colors sm:gap-5 sm:py-3 ${
+                  className={`flex w-full min-w-0 cursor-pointer items-center gap-3 py-4 text-gallery-title transition-colors sm:gap-5 sm:py-3 ${
                     isActive ? 'text-foreground' : 'text-muted hover:text-foreground'
                   }`}
                 >
-                  <span className="font-light tabular-nums">
+                  <span className="shrink-0 font-light tabular-nums">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <span className="min-w-0 font-medium whitespace-nowrap">{item.title}</span>
+                  <span className="min-w-0 flex-1 font-medium whitespace-nowrap">{item.title}</span>
                 </button>
               </li>
             );

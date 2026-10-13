@@ -38,12 +38,4 @@ export const galleryItems: GalleryItem[] = [
     title: 'Faraway Motion',
     image: imagePath(244),
   },
-  {
-    title: 'Measured Silence',
-    image: imagePath(249),
-  },
-  {
-    title: 'Crimson Cliffs',
-    image: imagePath(1016),
-  },
 ];

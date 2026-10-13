@@ -34,4 +34,4 @@ Tailwind CSS は `@tailwindcss/vite` プラグイン経由で Vite に接続し�
 
 デモの画像は [Lorem Picsum](https://picsum.photos/) のものを使用しています。画像の出典は [Unsplash](https://unsplash.com/) であり、著作権上の利用条件は [Unsplash License](https://unsplash.com/license) に従います。
 
-使用画像の ID は `13`、`237`〜`239`、`241`〜`244`、`249`、`1016` です。
+使用画像の ID は `13`、`237`〜`239`、`241`〜`244` です。
