@@ -1,16 +1,16 @@
-import type { Project } from '../data/projects';
+import type { GalleryItem } from '../data/galleryItems';
 
-type ProjectPreviewProps = {
+type GalleryPreviewProps = {
   activeIndex: number;
-  projects: Project[];
+  items: GalleryItem[];
   variant?: 'desktop' | 'mobile';
 };
 
-export const ProjectPreview = ({
+export const GalleryPreview = ({
   activeIndex,
-  projects,
+  items,
   variant = 'desktop',
-}: ProjectPreviewProps) => (
+}: GalleryPreviewProps) => (
   <div
     className={
       variant === 'mobile'
@@ -18,16 +18,16 @@ export const ProjectPreview = ({
         : 'relative isolate aspect-4/5 w-[clamp(12rem,25vw,23rem)] max-w-full overflow-hidden'
     }
   >
-    {projects.map((project, index) => {
+    {items.map((item, index) => {
       const isActive = index === activeIndex;
 
       return (
         <img
-          key={project.image}
-          src={project.image}
+          key={item.image}
+          src={item.image}
           alt=""
           aria-hidden="true"
-          className={`absolute inset-0 size-full object-cover mix-blend-plus-lighter transition duration-500 ease-out motion-reduce:transition-none ${
+          className={`absolute inset-0 size-full object-cover mix-blend-plus-lighter transition motion-reduce:transition-none ${
             isActive ? 'scale-100 opacity-100' : 'scale-105 opacity-0'
           }`}
         />

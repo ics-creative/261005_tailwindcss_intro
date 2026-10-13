@@ -1,11 +1,11 @@
-export type Project = {
+export type GalleryItem = {
   title: string;
   image: string;
 };
 
 const imagePath = (id: number) => `https://picsum.photos/id/${id}/800/1000`;
 
-export const projects: Project[] = [
+export const galleryItems: GalleryItem[] = [
   {
     title: 'Quiet Companion',
     image: imagePath(237),

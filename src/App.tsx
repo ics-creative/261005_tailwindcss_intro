@@ -1,9 +1,9 @@
-import { ProjectGallery } from './components/ProjectGallery';
-import { projects } from './data/projects';
+import { Gallery } from './components/Gallery';
+import { galleryItems } from './data/galleryItems';
 
 const App = () => (
   <main className="grid min-h-dvh place-items-center bg-canvas text-foreground">
-    <ProjectGallery projects={projects} />
+    <Gallery items={galleryItems} />
   </main>
 );
 
