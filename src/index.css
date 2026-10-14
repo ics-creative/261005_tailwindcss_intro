@@ -1,4 +1,25 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@custom-variant gallery-active {
+  @media (hover: hover) {
+    .gallery-list:not(:has(.gallery-title:hover, .gallery-title:focus-visible))
+      > li:first-child
+      &,
+    .gallery-list:not(:has(.gallery-title:hover))
+      > li:has(.gallery-title:focus-visible)
+      &,
+    .gallery-list > li:has(.gallery-title:hover) & {
+      @slot;
+    }
+  }
+
+  @media (hover: none) {
+    .gallery-list:not(:has(.gallery-title:focus-visible)) > li:first-child &,
+    .gallery-list > li:has(.gallery-title:focus-visible) & {
+      @slot;
+    }
+  }
+}
 
 @theme {
   --color-canvas: #fff;
@@ -12,5 +33,11 @@
   --default-transition-duration: 300ms;
   --default-transition-timing-function: var(--ease-out);
   font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
