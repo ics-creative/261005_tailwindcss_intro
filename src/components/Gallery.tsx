@@ -64,11 +64,9 @@ export const Gallery = ({ items }: GalleryProps) => {
 
       <div className="relative z-10 grid sm:grid-cols-[3fr_2fr] sm:gap-12">
         <span
-          aria-hidden="true"
           className="absolute top-6 left-0 hidden h-0 w-full border-t border-border-subtle sm:block"
         />
         <span
-          aria-hidden="true"
           className="absolute bottom-6 left-0 hidden h-0 w-full border-b border-border-subtle sm:block"
         />
         <ol ref={titleListRef} className="flex flex-col justify-center py-10">

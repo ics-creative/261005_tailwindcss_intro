@@ -26,7 +26,6 @@ export const GalleryPreview = ({
           key={item.image}
           src={item.image}
           alt=""
-          aria-hidden="true"
           className={`absolute inset-0 size-full object-cover mix-blend-plus-lighter transition motion-reduce:transition-none ${
             isActive ? 'scale-100 opacity-100' : 'scale-105 opacity-0'
           }`}
