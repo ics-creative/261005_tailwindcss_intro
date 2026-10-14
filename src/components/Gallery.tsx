@@ -111,7 +111,7 @@ export const Gallery = ({ items }: GalleryProps) => {
             ref={movingPreviewRef}
             className="absolute top-0 right-0 max-w-full transition-transform motion-reduce:transition-none"
           >
-            <GalleryPreview activeIndex={activeIndex} items={items} />
+            <GalleryPreview activeIndex={activeIndex} items={items} variant="desktop" />
           </div>
         </div>
       </div>
