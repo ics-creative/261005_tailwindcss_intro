@@ -58,10 +58,6 @@ export const Gallery = ({ items }: GalleryProps) => {
 
   return (
     <section className="w-full max-w-7xl px-5 sm:px-12">
-      <div className="fixed inset-0 z-0 flex items-center justify-center px-5 sm:hidden">
-        <GalleryPreview activeIndex={activeIndex} items={items} variant="mobile" />
-      </div>
-
       <div className="relative z-10 grid sm:grid-cols-[3fr_2fr] sm:gap-12">
         <span
           className="absolute top-6 left-0 hidden h-0 w-full border-t border-border-subtle sm:block"
@@ -109,7 +105,7 @@ export const Gallery = ({ items }: GalleryProps) => {
             ref={movingPreviewRef}
             className="absolute top-0 right-0 max-w-full transition-transform motion-reduce:transition-none"
           >
-            <GalleryPreview activeIndex={activeIndex} items={items} variant="desktop" />
+            <GalleryPreview activeIndex={activeIndex} items={items} />
           </div>
         </div>
       </div>

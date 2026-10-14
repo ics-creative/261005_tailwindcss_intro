@@ -3,21 +3,10 @@ import type { GalleryItem } from '../data/galleryItems';
 type GalleryPreviewProps = {
   activeIndex: number;
   items: GalleryItem[];
-  variant?: 'desktop' | 'mobile';
 };
 
-export const GalleryPreview = ({
-  activeIndex,
-  items,
-  variant = 'desktop',
-}: GalleryPreviewProps) => (
-  <div
-    className={
-      variant === 'mobile'
-        ? 'relative isolate aspect-16/11 w-full overflow-hidden'
-        : 'relative isolate aspect-4/5 w-[clamp(12rem,25vw,23rem)] max-w-full overflow-hidden'
-    }
-  >
+export const GalleryPreview = ({ activeIndex, items }: GalleryPreviewProps) => (
+  <div className="relative isolate aspect-4/5 w-[clamp(12rem,25vw,23rem)] max-w-full overflow-hidden">
     {items.map((item, index) => {
       const isActive = index === activeIndex;
 
