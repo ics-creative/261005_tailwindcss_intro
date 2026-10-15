@@ -6,6 +6,6 @@ type GalleryTitleProps = {
 export const GalleryTitle = ({ index, title }: GalleryTitleProps) => (
   <div className="flex w-full items-center gap-3 py-4 text-gallery-title text-muted transition-colors group-hover:gallery-anchor hover:text-foreground sm:gap-5 sm:py-3">
     <span className="shrink-0 font-light tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-    <span className="flex-1 text-center font-medium whitespace-nowrap">{title}</span>
+    <h2 className="flex-1 text-center font-medium whitespace-nowrap">{title}</h2>
   </div>
 );
