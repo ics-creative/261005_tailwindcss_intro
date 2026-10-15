@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* 独自に定義したユーティリティ */
 @utility gallery-anchor {
