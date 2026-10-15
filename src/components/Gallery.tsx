@@ -30,11 +30,11 @@ export const Gallery = ({ items }: GalleryProps) => {
                 onActivate={() => setActiveIndex(index)}
               />
               {/* ホバー中の画像表示 */}
-              <div className="absolute gallery-preview-position right-0 col-start-2 col-end-3 my-13 aspect-4/5 w-[clamp(12rem,25vw,23rem)] self-center overflow-hidden transition-[top,bottom] motion-reduce:transition-none max-sm:hidden">
+              <div className="absolute gallery-preview-position right-0 col-start-2 col-end-3 my-13 aspect-4/5 w-[clamp(12rem,25vw,23rem)] self-center overflow-hidden transition-[top,bottom] max-sm:hidden">
                 <img
                   src={item.image}
                   alt=""
-                  className="absolute inset-0 size-full scale-105 object-cover opacity-0 mix-blend-plus-lighter transition group-data-active:scale-100 group-data-active:opacity-100 motion-reduce:transition-none"
+                  className="absolute inset-0 size-full scale-105 object-cover opacity-0 mix-blend-plus-lighter transition group-data-active:scale-100 group-data-active:opacity-100"
                 />
               </div>
             </li>
