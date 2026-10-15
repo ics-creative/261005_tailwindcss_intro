@@ -1,24 +1,12 @@
 @import "tailwindcss";
 
-@custom-variant gallery-active {
-  @media (hover: hover) {
-    .gallery-list:not(:has(.gallery-title:hover, .gallery-title:focus-visible))
-      > li:first-child
-      &,
-    .gallery-list:not(:has(.gallery-title:hover))
-      > li:has(.gallery-title:focus-visible)
-      &,
-    .gallery-list > li:has(.gallery-title:hover) & {
-      @slot;
-    }
-  }
+@utility gallery-anchor {
+  anchor-name: --gallery-active;
+}
 
-  @media (hover: none) {
-    .gallery-list:not(:has(.gallery-title:focus-visible)) > li:first-child &,
-    .gallery-list > li:has(.gallery-title:focus-visible) & {
-      @slot;
-    }
-  }
+@utility gallery-preview-position {
+  position-anchor: --gallery-active;
+  inset-block: anchor(center);
 }
 
 @theme {
