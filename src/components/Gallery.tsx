@@ -1,6 +1,6 @@
-import { useState } from "react";
-import type { GalleryItem } from "../data/galleryItems";
-import { GalleryTitle } from "./GalleryTitle";
+import { useState } from 'react';
+import type { GalleryItem } from '../data/galleryItems';
+import { GalleryTitle } from './GalleryTitle';
 
 type GalleryProps = {
   items: GalleryItem[];
@@ -30,7 +30,7 @@ export const Gallery = ({ items }: GalleryProps) => {
                 onActivate={() => setActiveIndex(index)}
               />
               {/* ホバー中の画像表示 */}
-              <div className="gallery-preview-position absolute right-0 col-start-2 col-end-3 my-13 aspect-4/5 w-[clamp(12rem,25vw,23rem)] self-center overflow-hidden transition-[top,bottom] motion-reduce:transition-none max-sm:hidden">
+              <div className="absolute gallery-preview-position right-0 col-start-2 col-end-3 my-13 aspect-4/5 w-[clamp(12rem,25vw,23rem)] self-center overflow-hidden transition-[top,bottom] motion-reduce:transition-none max-sm:hidden">
                 <img
                   src={item.image}
                   alt=""
