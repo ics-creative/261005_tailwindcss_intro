@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* 独自に定義したユーティリティ */
 @utility gallery-anchor {
   anchor-name: --gallery-active;
 }
@@ -9,6 +10,7 @@
   inset-block: anchor(center);
 }
 
+/* プロジェクト用のテーマ定義 */
 @theme {
   --color-canvas: #fff;
   --color-foreground: #0a0a0a;
