@@ -1,16 +1,11 @@
 type GalleryTitleProps = {
   index: number;
   title: string;
-  onActivate: () => void;
 };
 
-export const GalleryTitle = ({ index, title, onActivate }: GalleryTitleProps) => (
-  <button
-    type="button"
-    onPointerEnter={onActivate}
-    className="flex w-full cursor-pointer items-center gap-3 py-4 text-gallery-title text-muted transition-colors group-data-active:gallery-anchor hover:text-foreground sm:gap-5 sm:py-3"
-  >
+export const GalleryTitle = ({ index, title }: GalleryTitleProps) => (
+  <div className="flex w-full items-center gap-3 py-4 text-gallery-title text-muted transition-colors group-hover:gallery-anchor hover:text-foreground sm:gap-5 sm:py-3">
     <span className="shrink-0 font-light tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-    <span className="flex-1 font-medium whitespace-nowrap">{title}</span>
-  </button>
+    <span className="flex-1 text-center font-medium whitespace-nowrap">{title}</span>
+  </div>
 );
