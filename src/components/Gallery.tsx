@@ -23,7 +23,11 @@ export const Gallery = () => {
         ))}
       </ol>
 
-      {activeIndex !== null && <GalleryPreview src={galleryItems[activeIndex].image} />}
+      {activeIndex !== null && (
+        <div className="hidden sm:block">
+          <GalleryPreview src={galleryItems[activeIndex].image} />
+        </div>
+      )}
     </div>
   );
 };
