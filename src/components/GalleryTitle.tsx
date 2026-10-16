@@ -1,4 +1,5 @@
 type GalleryTitleProps = {
+  key: string;
   index: number;
   title: string;
   isActive: boolean;
@@ -7,6 +8,7 @@ type GalleryTitleProps = {
 };
 
 export const GalleryTitle = ({
+  key,
   index,
   title,
   isActive,
@@ -14,6 +16,7 @@ export const GalleryTitle = ({
   onMouseLeave,
 }: GalleryTitleProps) => (
   <li
+    key={key}
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
     className="cursor-pointer border-t border-border-subtle first:border-t-0 last:border-b-0"
