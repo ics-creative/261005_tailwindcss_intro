@@ -16,9 +16,9 @@
   プレビューエリアの上端/下端からはみ出ない位置にclampで制限
   */
   top: clamp(
-    0px,
+    calc(var(--spacing) * 10),
     calc(anchor(center) - var(--gallery-preview-height) / 2),
-    calc(100% - var(--gallery-preview-height))
+    calc(100% - var(--gallery-preview-height) - var(--spacing) * 10)
   );
 }
 
