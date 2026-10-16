@@ -8,8 +8,13 @@
 @utility gallery-preview-position {
   --gallery-preview-width: clamp(12rem, 25vw, 23rem);
   --gallery-preview-height: calc(var(--gallery-preview-width) * 5 / 4);
+
   position-anchor: --gallery-active;
 
+  /*
+   画像の中心をanchor位置に揃える。
+  プレビューエリアの上端/下端からはみ出ない位置にclampで制限
+  */
   top: clamp(
     0px,
     calc(anchor(center) - var(--gallery-preview-height) / 2),
