@@ -1,7 +1,7 @@
-import { galleryItems } from '../data/galleryItems';
-import { GalleryPreview } from './GalleryPreview';
-import { GalleryTitle } from './GalleryTitle';
-import { Fragment, useState } from 'react';
+import { galleryItems } from "../data/galleryItems";
+import { GalleryPreview } from "./GalleryPreview";
+import { GalleryTitle } from "./GalleryTitle";
+import { Fragment, useState } from "react";
 
 export const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -24,10 +24,7 @@ export const Gallery = () => {
       </ol>
 
       {activeIndex !== null && (
-        <GalleryPreview
-          src={galleryItems[activeIndex].image}
-          position={(activeIndex / (galleryItems.length - 1)) * 100}
-        />
+        <GalleryPreview src={galleryItems[activeIndex].image} />
       )}
     </div>
   );
