@@ -7,15 +7,15 @@ const imagePath = (id: number) => `https://picsum.photos/id/${id}/800/1000`;
 
 export const galleryItems: GalleryItem[] = [
   {
-    title: 'Quiet Companion',
+    title: 'A Dog at Rest',
     image: imagePath(237),
   },
   {
-    title: 'Open Horizon',
+    title: 'City Skyline',
     image: imagePath(238),
   },
   {
-    title: 'Soft Current',
+    title: 'Dandelion Drift',
     image: imagePath(239),
   },
   {
@@ -23,19 +23,15 @@ export const galleryItems: GalleryItem[] = [
     image: imagePath(13),
   },
   {
-    title: 'Still Surface',
+    title: 'Ridge Trail',
     image: imagePath(241),
   },
   {
-    title: 'Wild Texture',
+    title: 'Evening Tracks',
     image: imagePath(242),
   },
   {
-    title: 'Morning Shade',
+    title: 'Misty Mountain Path',
     image: imagePath(243),
-  },
-  {
-    title: 'Faraway Motion',
-    image: imagePath(244),
   },
 ];
